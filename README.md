@@ -5,13 +5,13 @@
 and websocket API. LEOcoinsight API runs in NodeJS and uses LevelDB for storage.
 
 This is a backend-only service. If you're looking for the web frontend application,
-take a look at https://bitbucket.org/netis/leocoinsight-api.
+take a look at https://github.com/Leocoin-project/leocoinsight.
 
 *LEOcoinsight API* allows to develop bitcoin-related applications (such as wallets) that
 require certain information from the blockchain that bitcoind does not provide.
 
 A blockchain explorer front-end has been developed on top of *LEOcoinsight API*. It can
-be downloaded at [Github LEOcoinsight Repository](https://bitbucket.org/netis/leocoinsight).
+be downloaded at [Github LEOcoinsight Repository](https://github.com/Leocoin-project/leocoinsight).
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ bitcoind must be running and must have finished downloading the blockchain **bef
 
   To install LEOcoinsight API, clone the main repository:
 
-    $ git clone https://bitbucket.org/netis/leocoinsight-api && cd LEOcoinsight-api
+    $ git clone https://github.com/Leocoin-project/leocoinsight-api && cd LEOcoinsight-api
 
   Install dependencies:
 
