@@ -10,6 +10,22 @@ var bDb       = require('../../lib/BlockDb').default();
 
 function Status() {}
 
+Status.prototype.getMoneySupply = function(next) {
+  var that = this;
+  async.series([
+    function (cb) {
+      rpc.getInfo(function(err, info){
+        if (err) return cb(err);
+
+        that.moneysupply = info.result.moneysupply;
+        return cb();
+      });
+    },
+  ], function (err) {
+    return next(err);
+  });
+};
+
 Status.prototype.getInfo = function(next) {
   var that = this;
   async.series([
