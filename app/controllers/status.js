@@ -22,14 +22,22 @@ exports.show = function(req, res) {
       res.jsonp(statusObject);
     }
   };
-
+	
+  var returnMoneysupplyValue = function (err) {
+    if (err || ! statusObject)
+      return common.handleErrors(err, res);
+    else {
+      res.send(statusObject.moneysupply.toString());
+    }
+  };
+	
   switch(option) {
     case 'getDifficulty':
       statusObject.getDifficulty(returnJsonp);
       break;
-	case 'getMoneySupply':
-      statusObject.getMoneySupply(returnJsonp);
-      break;  
+    case 'getMoneySupply':
+      statusObject.getMoneySupply(returnMoneysupplyValue);
+      break;
     case 'getTxOutSetInfo':
       statusObject.getTxOutSetInfo(returnJsonp);
       break;
